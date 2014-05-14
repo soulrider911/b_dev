@@ -1,0 +1,689 @@
+@import "settings";
+@import "colors";
+@import "icons";
+@import "animation";
+@import "foundation";
+@import "compass/css3";
+@import url(http://fonts.googleapis.com/css?family=Oswald:700);
+
+body{
+	font-weight: 400;
+}
+/* Global Typography */	
+/* ---------------------------------------- */ 
+.fancy{
+	font-family: 'Oswald', 'sans-serif';
+	line-height: 1;
+	letter-spacing: .01em;
+	font-size: 4em;
+	font-weight: 700;
+	color: $midnightBlue;
+	text-shadow: 1px 1px 0 white, 2px 2px 0 $midnightBlue, 3px 3px 0 $midnightBlue;
+}
+a{
+	&:hover{
+		@include transition(color, .3s);
+	}
+}
+h4{
+	font-weight: 200;
+	text-transform: uppercase;
+	letter-spacing: .05em;
+	color: $wetAsphalt;
+}
+h5{
+	color: #555;	
+	font-weight: 100;
+}
+.section-head{
+	font-weight: 100;
+	font-size: 1.8em;
+	letter-spacing: .08em;
+	margin-bottom: 50px;
+	&:before,
+	&:after{
+		font-family: 'portfolio-icons';
+		color: lighten($grayLight,30%);
+		display: inline-block;
+		font-size: 30px;
+		margin: 0 10px;
+		font-weight: normal;
+		vertical-align: -4px;
+	}
+	&:before{
+		content: "\e60c";
+	}
+	&:after{
+		content: "\e608";
+	}
+}
+p{
+	font-weight: 300;
+	line-height: 2;
+	font-size: 16px;
+	color: #555;
+	&.justify{
+		text-align: justify;
+	}
+}
+hr.fancy{
+	position: relative;
+	border-color: lighten($grayLight,30%);
+	&:after{
+		font-family: 'portfolio-icons';
+		content: "\e60b";
+		display: inline-block;
+		position: absolute;
+		text-shadow:none;
+		font-weight: normal;
+		font-size: 30px;
+		color: $grayLight;
+		background-color: #fff;
+		padding: 0 5px;
+		left: 50%;
+		top: -13px;
+		margin-left: -43px;
+		margin-bottom: 2rem;
+	}
+}
+/* Specific Icon Sizes */	
+/* ---------------------------------------- */ 
+.icon-sm{
+	font-size: 2em;
+}
+.icon-md{
+	font-size: 4em;
+}
+.icon-lg{
+	font-size: 5em;	
+}
+.icon-super{
+	font-size: 6em;		
+}
+
+/* Drawer Navigation */	
+/* ---------------------------------------- */ 
+#drawer-nav{
+	width: 180px;
+	position: fixed;
+	z-index: 100;
+	background-color: $asphalt;
+	height: 100%;
+	top: 0;
+	bottom: 0;
+	left: -180px;
+	padding: 10px;
+	.drawer-toggle{
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		padding: 0;
+		position: absolute;
+		right: -50px;
+		top: 10px;
+		display: block;
+		color: #fff;
+		text-align: center;
+		background-color: $asphalt;
+		@include border-radius(2px);
+		border: 1px solid $gray;
+		@include opacity(.6);
+		&:focus,
+		&:active{
+			outline: none;
+		}
+		&:hover{
+			@include opacity(.9);
+		}
+		i{
+			margin-right: -2px;
+		}
+	}
+	nav > a{
+		display: block;
+		font-weight: 400;
+		color: rgba(255,255,255,.4);
+		width: 100%;
+		padding: 8px;
+		margin: 10px 0;
+		@include border-radius(4px);
+		@include transition(all .4s);
+		i{
+			font-size: 22px;
+			margin-right: 4px;
+			vertical-align: -2px;
+		}
+		&:hover{
+			color: $offWhite;
+		}
+		&.active{
+			color: $offWhite;
+			background-color: rgba(0,0,0,.3);
+			i{
+				color: $brand;
+			}
+		}
+	}
+}
+/* Header*/	
+/* ---------------------------------------- */ 
+header#home > div{
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	height: 300px;
+}
+.headline{
+	h4{
+		color: #777;
+	}
+	h1{
+		margin:0;
+		margin-bottom: 10px;
+		font-size: 5em;
+	}
+	.rotator{
+		color: $greenSea;
+		font-weight: 100;
+		text-transform: uppercase;
+		line-height: 1;
+		border: 1px solid #eee;
+		border-left: none;
+		border-right: none;
+		max-width: 650px;
+		font-size: 2em;
+		margin: 20px auto 15px auto;
+		padding: 8px 0;
+		span{
+			font-weight: 400;
+			color: $midnightBlue;
+		}
+	}
+	p{
+		color: $grayLight;
+		margin-bottom:0;
+		font-weight: 300;
+	}
+}
+
+/* Sections */	
+/* ---------------------------------------- */ 
+.main-section,
+.alt-section{
+	position: relative;
+	padding: 6em 0;
+	background-color: white;
+}
+.alt-section{
+	background-color: $midnightBlue;
+	h2,h3,h4,h5,p{
+		color: $offWhite;
+	}
+	.section-head{
+		&:before,
+		&:after{
+			font-family: 'portfolio-icons';
+			color: $gray;
+		}
+	}
+	&:after,
+	&:before{
+		content: '';
+		z-index: 1;
+		position: absolute;
+		width: 0;
+		height: 0;
+		left: 50%;
+		top: 0;
+		margin-left: -40px;
+	}
+	&:before{
+		border-left: 40px solid transparent;
+		border-right: 40px solid transparent;
+		border-top: 40px solid #fff;
+		top: 0;
+
+	}
+	&:after{
+		border-left: 40px solid transparent;
+		border-right: 40px solid transparent;
+		border-bottom: 40px solid #fff;
+		top: auto;
+		bottom: 0;
+	}
+}
+/* Application Network */	
+/* ---------------------------------------- */ 
+#app-network{
+	svg{
+		margin-top: -35px;
+		width: 100%;
+		max-height: 441px;
+		position: relative;
+
+		//network lines
+		#network{
+			path{
+				fill:none;
+				stroke-width: 3;
+				stroke-dasharray: 10;
+				stroke-miterlimit: 10;
+				stroke: red;
+
+				&.wp{
+					stroke: $wp;
+					stroke-width: 5;
+				}
+				&.js{
+					stroke: $js;
+					stroke-width: 5;
+				}
+				&.codekit{
+					stroke: $codekit;
+					stroke-width: 3;
+				}
+				&.sass{
+					stroke: $sass;
+					stroke-width: 8;
+				}
+				&.html5{
+					stroke: $html5;
+					stroke-width: 7;
+					
+				}
+				&.css3{
+					stroke: $css3;
+					stroke-width: 6;
+				}
+				&.git{
+					stroke: $git;
+					stroke-width: 3;
+				}
+				&.jquery{
+					stroke: $jquery;
+					stroke-width: 7;
+				}
+				&.ps{
+					stroke: $ps;
+					stroke-width: 4;
+				}
+				&.sketch{
+					stroke: $sketch;
+					stroke-width: 5;
+				}
+			}
+		}
+		
+		.icons g{
+			path, polygon{ 
+			stroke:none;
+			}
+
+			//Icons!!
+			&.wp{
+				fill: $wp;
+			}
+			&.js{
+				fill: $js;
+			}
+			&.codekit{
+				fill: $codekit;
+			}
+			&.sass{
+				fill: $sass;
+			}
+			&.html5{
+				fill: $html5;
+			}
+			&.css3{
+				fill: $css3;
+			}
+			&.git{
+				fill: $git;
+			}
+			&.jquery{
+				fill: $jquery;
+			}
+			&.ps{
+				fill: $ps;
+			}
+			&.sketch{
+				fill: $sketch;
+			}
+			&.heart{
+				fill: #fff;
+				path{
+					@include transform-origin(center);
+					stroke-width: 4;
+					stroke: $midnightBlue;
+				}
+			}
+		}
+	}
+}
+/* About me */	
+/* ---------------------------------------- */ 
+#about{
+	.row{
+		margin-bottom: 20px;
+	}
+	.icon-profile,
+	.color-picker{
+		margin-bottom: 30px;
+	}
+	.icon-profile{
+		$size: 275px;
+		font-size: 190px;
+		line-height: $size;
+		background-color: $brand;
+		width: $size;
+		height: $size;
+		display: inline-block;
+		color: #fff;
+		vertical-align: middle;
+		position: relative;
+		@include border-radius(50%);
+		i{
+			color: #555;
+			font-size: 30px;
+			line-height: 1;
+			position: absolute;
+			top: 77px;
+			left: 110px;
+			&.large{
+				@include rotate(20deg);
+				font-size: 36px;
+				top: 86px;
+				left: 138px;
+			}
+		}
+	}
+	.color-picker{
+		overflow: hidden;
+		.icon-eyedropper{
+			color: $gray;
+			position: absolute;
+			left: 50%;
+			top: 102px;
+			font-size: 100px;
+			margin-left: -50px;
+			display: block;
+
+		}
+		ul.color-swatches{
+			position: relative;
+			margin: 0;
+			display: inline-block;
+			padding:0;
+			width: 300px;
+			height: 300px;
+			@include border-radius(50%);
+			li{
+				$size: 64px;
+				list-style-type: none;
+				position: absolute;
+				font-size: $size;
+				width: $size;
+				height: $size;
+				text-align: center;
+				line-height: $size;
+				left: 50%;
+				top: 50%;
+				margin-left: - $size / 2;
+				margin-top: -$size / 2;
+				i{
+					@include rotate(92.5deg);
+					display: block;	
+				}
+				&:nth-of-type(1) i{
+					color: #FF0000;
+				}
+				&:nth-of-type(2) i{
+					color: #FF6600;
+				}
+				&:nth-of-type(3) i{
+					color: #FF9500;
+				}
+				&:nth-of-type(4) i{
+					color: #FFC600;
+				}
+				&:nth-of-type(5) i{
+					color: #FFFF00;
+				}
+				&:nth-of-type(6) i{
+					color: #8AC900;
+				}
+				&:nth-of-type(7) i{
+					color: #00AF00;
+				}
+				&:nth-of-type(8) i{
+					color: #00A3C9;
+				}
+				&:nth-of-type(9) i{
+					color: #0062B8;
+				}
+				&:nth-of-type(10) i{
+					color: #0000A8;
+				}
+				&:nth-of-type(11) i{
+					color: #6400A8;
+				}
+				&:nth-of-type(12) i{
+					color: #C7007C;
+				}
+
+				
+				$items: 12;
+				$circ-size : 220px;
+				$rot : -75;
+				$angle : 360 / $items;
+				@for $i from 1 through $items {
+					&:nth-of-type(#{$i}){
+						@include transform(rotate(#{$rot}deg)translate($circ-size / 2));
+						opacity: 1;
+					}
+					$rot: $rot + $angle; 
+				}
+
+			}
+		}
+	}
+}
+
+/* Process */	
+/* ---------------------------------------- */ 
+#process{
+	.row{
+		position: relative;
+	}
+	p{
+		font-weight: 100;
+		line-height: 1.5;
+		letter-spacing: .05em;
+	}
+	div.columns{
+		z-index: 10;
+		h3{
+			font-weight: 200;
+			font-size: 1.4rem;
+		}
+		i{
+			$size: 120px;
+			background-color: #fff;
+			@include border-radius(50%);
+			width: $size;
+			height: $size;
+			line-height: $size;
+			font-size: 50px;
+			display: inline-block;
+			color: darken($brand, 5%);
+			margin-bottom: 20px;
+		}
+		&:nth-of-type(4) i{
+			background-color: darken($brand, 5%);
+			color: #fff;
+		}
+	}
+	#timeline{
+		position: absolute;
+		width: 80%;
+		margin-left: 75px;
+		height: 1px;
+		top: 155px;
+		background-color: $gray;
+		z-index: 1;
+		overflow: hidden;
+		#time{
+			width: 120%;
+			border-top: 18px dotted $brand;
+			height: 2px;
+			position: absolute;
+			display: block;
+		}
+	}
+}
+
+/* My Work */	
+/* ---------------------------------------- */ 
+#work{
+	padding-bottom: 0px;
+	&:after{
+		display: none;
+	}
+	nav{
+		margin-bottom: 20px;
+		a{
+			display: inline-block;
+			background-color: transparent;
+			border: 1px solid $wetAsphalt;
+			color: $wetAsphalt;
+			padding: 5px 12px; 
+			font-weight: 300;
+			@include border-radius(2px);
+			&:hover,
+			&.active{
+				background-color: $wetAsphalt;
+				color: #fff;
+			}
+		}
+	}
+	#gallery{
+		overflow: hidden;
+		max-width: 100%;
+		div{
+			display: inline;
+			width: 25%;
+			position: relative;
+			@media (max-width: 760px) {
+			    width: 50%;
+			}			
+			a{
+				overflow: hidden;
+				.overlay{
+					width: 100%;
+					height: 100%;
+					background-color: rgba(23,211,172,.85);
+					display: block;
+					position: absolute;
+					text-align: center;
+					color: #fff;
+					@include opacity(0);
+					@include transition(all .3s);
+					i{
+						position: absolute;
+						display: block;
+						width: 100%;
+						top: 40%;
+						font-size: 60px;
+						@include rotate(360deg);	
+						@include transition(all .3s);
+					}
+					h3{
+						color: #fff;
+						font-size: 1.1em;
+						font-weight: 300;
+						width: 100%;
+						margin: 0;
+						position: absolute;
+						bottom: 20px;
+					}
+				}
+				img{
+					width: 100%;
+					height: auto;
+				}
+			}
+			&:hover .overlay{
+				@include opacity(1);
+				i{
+					@include rotate(0deg);
+				}
+			}
+		} 
+	}
+}
+
+/* Skills */	
+/* ---------------------------------------- */ 
+
+#skills{
+	.skill{
+		margin-bottom: 20px;
+		h5 span{
+			float: right;
+			display: inline-block;
+			font-weight: 300;
+			color: rgba(255,255,255,.7);
+		}
+	}
+	.progress{
+		padding: 0;
+		border: 0;
+		.meter{
+			background-color: $brand;
+
+		}
+	}
+}
+
+/* Animations */	
+/* ---------------------------------------- */ 
+#network{
+	&.animated path{
+		&.wp{ @include animateMe(dash, 3s);	}
+		&.js{ @include animateMe(dash, 3s);	}
+		&.codekit{ @include animateMe(dash, 1s); }
+		&.sass{ @include animateMe(dash, 2.5s); }
+		&.html5{ @include animateMe(dash, 4s); }
+		&.css3{ @include animateMe(dashR, 3.1s); }
+		&.git{ @include animateMe(dash, 1.5s); }
+		&.jquery{ @include animateMe(dashR, 3s); }
+		&.ps{ @include animateMe(dash, 3s); }
+		&.sketch{ @include animateMe(dash, 1s); }
+	}
+}
+g.heart.animated path{
+	@include animateMe(pulse, 2s, 0, infinite, ease-in-out);
+}
+
+#about .icon-profile i{
+	&.small{
+		@include animateMe(rotate, 2.8s);
+	}
+	
+	&.large{
+		@include animateMe(rotate-rev, 2.7s);
+	}
+}
+
+.color-swatches.animated{
+	@include animateMe(rotate, 18s);
+}
+#timeline.animated #time{
+	@include animateMe(timeline, .5s);	
+}
+
+
