@@ -34,12 +34,55 @@ em{
 	margin: 0 auto;
 	@include clearfix();
 }
+.overlay{
+	background-color:rgba(1,64,103,.8);
+	left:0; top:0; right:0; bottom:0; 
+	margin: auto;
+	position: fixed;
+	z-index: 100;
+	display:none;
+	.modal{
+		width: 50%;
+		height: 250px;
+		left:0; top:0; right:0; bottom:0; 
+		margin: auto;
+		margin-top:-300px;
+		position:absolute;
+		background-color: #2980b9;
+		color: #fff;
+		text-align: center;
+		@include border-radius(5px);
+		@include transition(all .3s cubic-bezier(0.940, -0.415, 0.085, 1.575));
+		h3{
+			i{
+				display: block;
+			}
+			font-size: 3em;
+			font-weight: 700;
+			color: rgba(0,0,0,.5);
+			margin-top: 50px;
+			span{
+				line-height: 2;
+				display: block;
+				font-size: .3em;
+				font-weight: 400;
+				color: #fafafa;
+			}
+		}
+	}
+	&.active{
+		.modal{
+			margin-top: 100px;
+		}
+	}
+}
 header{
-	padding: 3em 10%;
-	background-color: #ECF0F1;
+	padding: 3.5em 10%;
+	background-color: #2980b9;
 	text-align: center;
-	color: #2980b9;
-	margin-bottom: 20px;
+	color: #fafafa;
+	margin-bottom: 30px;
+	@include box-shadow(0 5px 0 rgba(7,89,139,1));
 	i{
 		font-size: 10em;
 		color: rgba(0,0,0,.03);
@@ -47,7 +90,7 @@ header{
 		width: 100%;
 		text-align: center;
 		left: 0;
-		top: 2%;
+		top: 1%;
 
 	}
 	h1{
@@ -63,6 +106,9 @@ div.col{
 	width: 33.33333333333333%;
 	float: left;
 	padding: 0 10px;
+	@media (max-width: 820px) {
+		width: 100%;
+	}
 	ul{
 		margin-bottom: 30px;
 	}
@@ -77,7 +123,7 @@ div.col{
 		border:1px solid #C9C6A6;
 		padding: 10px;
 		@include border-radius(3px);
-		@include transition(all, .4s ease);
+		@include transition(all, .3s);
 		margin-bottom: 2px;
 		code{
 			font-family: "Courier New", Courier, monospace;
@@ -87,8 +133,11 @@ div.col{
 			white-space: normal;
 			word-break: break-all;
 			font-weight: 700;
+			&:first-letter{
+				color: rgba(0,0,0,.4);
+			}
 		}
-		&:hover{
+		&.hover{
 			background-color: darken(#FFFDE8, 6%);
 		}
 	}
@@ -98,7 +147,7 @@ div.col{
 	padding: 12px;
 	color: #fff;
 	font-size: 16px;
-	font-weight: 700;
+	font-weight: 400;
 	margin-bottom: 15px;
 	i{
 		font-weight: normal;

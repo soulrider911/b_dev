@@ -5,18 +5,28 @@
 	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
 	<script type="text/javascript" src='http://code.jquery.com/jquery-latest.js'></script>
+	<script src="http://www.steamdev.com/zclip/js/jquery.zclip.min.js"></script>
 		<title>Git Short Cuts</title>
 	</head>
 	<body>
+		<div class="overlay">
+			<div class="modal">
+				<h3>
+					<i class="fa fa-thumbs-up"></i>
+					<strong>Boom!</strong>
+					<span>Code copied to your clipboard</span>
+				</h3>
+			</div>
+		</div>
 		<header>
 			<i class="fa fa-github"></i>
 			<h1>Git Cheat Sheet</h1>
-			<p>A list of handy git commeands to make your life easier!</p>
+			<p>A list of handy git commands to make your life easier!</p>
 		</header>
 		<div class="container">
 			<div class="col">
+				<h3 class="section-title"><i class="fa fa-pencil"></i> Create</h3>
 				<ul>
-					<h3 class="section-title"><i class="fa fa-pencil"></i> Create</h3>
 					<li>
 						<p>Clone and Existing Repository</p>
 						<pre><code>$ git clone ssh://user@domain.com/repo.git</code></pre>
@@ -34,8 +44,8 @@
 						<pre><code>$ git clone ssh://user@domain.com/repo.git</code></pre>
 					</li>
 				</ul>
+				<h3 class="section-title"><i class="fa fa-desktop"></i> Local Changes</h3>
 				<ul>
-					<h3 class="section-title"><i class="fa fa-desktop"></i> Local Changes</h3>
 					<li>
 						<p>Changed files in your working directory</p>
 						<pre><code>$ git status</code></pre>
@@ -72,8 +82,8 @@
 			</div>
 
 			<div class="col">
+				<h3 class="section-title"><i class="fa fa-sitemap"></i> Branching &amp; Tags</h3>
 				<ul>
-					<h3 class="section-title"><i class="fa fa-sitemap"></i> Branching &amp; Tags</h3>
 					<li>
 						<p>List all existing branches</p>
 						<pre><code>$ git branch</code></pre>
@@ -99,8 +109,8 @@
 						<pre><code>$ git tag &lt;tag-name&gt;</code></pre>
 					</li>
 				</ul>
+				<h3 class="section-title"><i class="fa fa-refresh"></i> Update &amp; Publish</h3>
 				<ul>
-					<h3 class="section-title"><i class="fa fa-refresh"></i> Update &amp; Publish</h3>
 					<li>
 						<p>List all currently configured remotes</p>
 						<pre><code>$ git remote -v</code></pre>
@@ -137,8 +147,8 @@
 			</div>
 
 			<div class="col">
+				<h3 class="section-title"><i class='fa fa-code-fork'></i> Merge &amp; Rebase</h3>
 				<ul>
-					<h3 class="section-title"><i class='fa fa-code-fork'></i> Merge &amp; Rebase</h3>
 					<li>
 						<p>Merge &lt;branch&gt; into your current HEAD</p>
 						<pre><code>$ git merge &lt;branch&gt;</code></pre>
@@ -166,8 +176,8 @@
 						<pre><code>$ git rm &lt;resolved-file&gt;</code></pre>
 					</li>
 				</ul>
+				<h3 class="section-title"><i class='fa fa-undo'></i> Undo</h3>
 				<ul>
-					<h3 class="section-title"><i class='fa fa-undo'></i> Undo</h3>
 					<li>
 						<p>Discard all local changes in your working directory</p>
 						<pre><code>$ git reset --hard HEAD</code></pre>
@@ -190,27 +200,12 @@
 					</li>
 					<li>
 						<p>Reset your HEAD pointer to a previous commit &amp; preserve uncommitted local changes</p>
-						<pre><code>$ git reset --keep &lt;commit&gt;</code></pre>
-						<button id="copy-button" data-clipboard-text="Copy Me!" title="Click to copy me.">Copy to Clipboard</button>	
+						<pre><code>$ git reset --keep &lt;commit&gt;</code></pre>	
 					</li>
 				</ul>
 			</div>
 		</div>
 		<!-- //container -->
-		<script src="https://raw.githubusercontent.com/zeroclipboard/zeroclipboard/1.x-master/ZeroClipboard.min.js"></script>
-		<script>
-			var client = new ZeroClipboard( document.getElementById("copy-button") );
-
-client.on( "ready", function( readyEvent ) {
-  // alert( "ZeroClipboard SWF is ready!" );
-
-  client.on( "aftercopy", function( event ) {
-    // `this` === `client`
-    // `event.target` === the element that was clicked
-    event.target.style.display = "none";
-    alert("Copied text to clipboard: " + event.data["text/plain"] );
-  } );
-} );
-		</script>
+		<script src="js/functions.js"></script>
 	</body>
 </html>
