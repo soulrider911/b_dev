@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang='en'>
+	<head>
+	<meta charset='utf-8'> 
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+	<script type="text/javascript" src='http://code.jquery.com/jquery-latest.js'></script>
+		<title>Git Short Cuts</title>
+	</head>
+	<body>
+		<header>
+			<i class="fa fa-github"></i>
+			<h1>Git Cheat Sheet</h1>
+			<p>A list of handy git commeands to make your life easier!</p>
+		</header>
+		<div class="container">
+			<div class="col">
+				<ul>
+					<h3 class="section-title"><i class="fa fa-pencil"></i> Create</h3>
+					<li>
+						<p>Clone and Existing Repository</p>
+						<pre><code>$ git clone ssh://user@domain.com/repo.git</code></pre>
+					</li>
+					<li>
+						<p>Create a new local repository</p>
+						<pre><code>$ git init</code></pre>
+					</li>
+					<li>
+						<p>Clone and Existing Repository</p>
+						<pre><code>$ git clone ssh://user@domain.com/repo.git</code></pre>
+					</li>
+					<li>
+						<p>Clone and Existing Repository</p>
+						<pre><code>$ git clone ssh://user@domain.com/repo.git</code></pre>
+					</li>
+				</ul>
+				<ul>
+					<h3 class="section-title"><i class="fa fa-desktop"></i> Local Changes</h3>
+					<li>
+						<p>Changed files in your working directory</p>
+						<pre><code>$ git status</code></pre>
+					</li>
+					<li>
+						<p>Changes to tracked files</p>
+						<pre><code>$ git diff</code></pre>
+					</li>
+					<li>
+						<p>Add all current changes to the next commit</p>
+						<pre><code>$ git add .</code></pre>
+					</li>
+					<li>
+						<p>Add some changes in &lt;file&gt; to the next commit</p>
+						<pre><code>$ git add -p &lt;file&gt;</code></pre>
+					</li>
+					<li>
+						<p>Commit all local changes in tracked files</p>
+						<pre><code>$ git commit -a</code></pre>
+					</li>
+					<li>
+						<p>Commit previously staged changes</p>
+						<pre><code>$ git add -p &lt;file&gt;</code></pre>
+					</li>
+					<li>
+						<p>Add some changes in <file> to the next commit</p>
+						<pre><code>$ git commit</code></pre>
+					</li>
+					<li>
+						<p>Change the last commit <br> <em>Don‘t amend published commits!</em></p>
+						<pre><code>$ git commit --amend</code></pre>
+					</li>
+				</ul>
+			</div>
+
+			<div class="col">
+				<ul>
+					<h3 class="section-title"><i class="fa fa-sitemap"></i> Branching &amp; Tags</h3>
+					<li>
+						<p>List all existing branches</p>
+						<pre><code>$ git branch</code></pre>
+					</li>
+					<li>
+						<p>Switch HEAD branch</p>
+						<pre><code>$ git checkout &lt;branch&gt;</code></pre>
+					</li>
+					<li>
+						<p>Create a new branch based on your current HEAD</p>
+						<pre><code>$ git branch &lt;new-branch&gt; </code></pre>
+					</li>
+					<li>
+						<p>Create a new tracking branch based on a remote branch</p>
+						<pre><code>$ git checkout --track &lt;remote/branch&gt;</code></pre>
+					</li>
+					<li>
+						<p>Delete a local branch</p>
+						<pre><code>$ git branch -d &lt;branch&gt;</code></pre>
+					</li>
+					<li>
+						<p>Mark the current commit with a tag</p>
+						<pre><code>$ git tag &lt;tag-name&gt;</code></pre>
+					</li>
+				</ul>
+				<ul>
+					<h3 class="section-title"><i class="fa fa-refresh"></i> Update &amp; Publish</h3>
+					<li>
+						<p>List all currently configured remotes</p>
+						<pre><code>$ git remote -v</code></pre>
+					</li>
+					<li>
+						<p>Show information about a remote</p>
+						<pre><code>$ git remote show &lt;remote&gt;</code></pre>
+					</li>
+					<li>
+						<p>Add new remote repository, named &lt;remote&gt;</p>
+						<pre><code>$ git remote add &lt;remote&gt; &lt;url&gt; </code></pre>
+					</li>
+					<li>
+						<p>Download all changes from &lt;remote&gt;, but don‘t integrate into HEAD</p>
+						<pre><code>$ git fetch &lt;remote&gt;</code></pre>
+					</li>
+					<li>
+						<p>Download changes and directly merge/integrate into HEAD</p>
+						<pre><code>$ git pull &lt;remote&gt; &lt;branch&gt;</code></pre>
+					</li>
+					<li>
+						<p>Publish local changes on a remote</p>
+						<pre><code>$ git push &lt;remote&gt; &lt;branch&gt;</code></pre>
+					</li>
+					<li>
+						<p>Delete a branch on the remote</p>
+						<pre><code>$ git branch -dr &lt;remote/branch%gt;</code></pre>
+					</li>
+					<li>
+						<p>Publish your tags</p>
+						<pre><code>$ git push --tags</code></pre>
+					</li>
+				</ul>
+			</div>
+
+			<div class="col">
+				<ul>
+					<h3 class="section-title"><i class='fa fa-code-fork'></i> Merge &amp; Rebase</h3>
+					<li>
+						<p>Merge &lt;branch&gt; into your current HEAD</p>
+						<pre><code>$ git merge &lt;branch&gt;</code></pre>
+					</li>
+					<li>
+						<p>Rebase your current HEAD onto &lt;branch&gt; <br><em>Don‘t rebase published commits!</em></p>
+						
+						<pre><code>$ git rebase &lt;branch&gt;</code></pre>
+					</li>
+					<li>
+						<p>Abort a rebase</p>
+						<pre><code>$ git rebase --abort</code></pre>
+					</li>
+					<li>
+						<p>Continue a rebase after resolving conflicts</p>
+						<pre><code>$ git rebase --continue</code></pre>
+					</li>
+					<li>
+						<p>Use your configured merge tool to solve conflicts</p>
+						<pre><code>$ git mergetool</code></pre>
+					</li>
+					<li>
+						<p>Use your editor to manually solve conflicts and (after resolving) mark file as resolved</p>
+						<pre><code>$ git add &lt;resolved-file&gt;</code></pre>
+						<pre><code>$ git rm &lt;resolved-file&gt;</code></pre>
+					</li>
+				</ul>
+				<ul>
+					<h3 class="section-title"><i class='fa fa-undo'></i> Undo</h3>
+					<li>
+						<p>Discard all local changes in your working directory</p>
+						<pre><code>$ git reset --hard HEAD</code></pre>
+					</li>
+					<li>
+						<p>Discard local changes in a specific file</p>
+						<pre><code>$ git checkout <file>&lt;file&gt;</code></pre>
+					</li>
+					<li>
+						<p>Revert a commit (by producing a new commit with contrary changes)</p>
+						<pre><code>$ git revert &lt;commit&gt;</code></pre>
+					</li>
+					<li>
+						<p>Reset your HEAD pointer to a previous commit &amp; discard all changes since then</p>
+						<pre><code>$ git reset --hard &lt;commit&gt;</code></pre>
+					</li>
+					<li>
+						<p>Reset your HEAD pointer to a previous commit &amp; preserve all changes as unstaged changes</p>
+						<pre><code>$ git reset &lt;commit&gt;</code></pre>
+					</li>
+					<li>
+						<p>Reset your HEAD pointer to a previous commit &amp; preserve uncommitted local changes</p>
+						<pre><code>$ git reset --keep &lt;commit&gt;</code></pre>
+						<button id="copy-button" data-clipboard-text="Copy Me!" title="Click to copy me.">Copy to Clipboard</button>	
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- //container -->
+		<script src="https://raw.githubusercontent.com/zeroclipboard/zeroclipboard/1.x-master/ZeroClipboard.min.js"></script>
+		<script>
+			var client = new ZeroClipboard( document.getElementById("copy-button") );
+
+client.on( "ready", function( readyEvent ) {
+  // alert( "ZeroClipboard SWF is ready!" );
+
+  client.on( "aftercopy", function( event ) {
+    // `this` === `client`
+    // `event.target` === the element that was clicked
+    event.target.style.display = "none";
+    alert("Copied text to clipboard: " + event.data["text/plain"] );
+  } );
+} );
+		</script>
+	</body>
+</html>

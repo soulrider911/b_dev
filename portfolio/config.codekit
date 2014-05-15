@@ -1201,9 +1201,9 @@
 	},
 "projectAttributes": {
 	"bowerAbbreviatedPath": "",
-	"displayValue": "portfolio",
-	"displayValueWasSetByUser": 0,
-	"iconImageName": "brackets_blue"
+	"displayValue": "Portfolio Website",
+	"displayValueWasSetByUser": 1,
+	"iconImageName": "harddrive_yellow"
 	},
 "projectSettings": {
 	"alwaysUseExternalServer": 0,

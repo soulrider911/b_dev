@@ -1,0 +1,107 @@
+@import "compass/reset";
+@import "compass/css3";
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(http://fonts.googleapis.com/css?family=Inconsolata:400,700);
+
+*{
+	@include box-sizing(border-box);
+}
+@mixin clearfix(){
+	&:after{
+		content: '';
+		height: 0;
+		line-height: 0;
+		display: block;
+		clear: both;
+		visibility: hidden;
+	}
+}
+
+body{
+	background-color: #fafafa;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	font-size: 100%;
+}
+em{
+	font-style: italic;
+	font-family: helvetica;
+	font-weight: 100;
+}
+.container{
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	@include clearfix();
+}
+header{
+	padding: 3em 10%;
+	background-color: #ECF0F1;
+	text-align: center;
+	color: #2980b9;
+	margin-bottom: 20px;
+	i{
+		font-size: 10em;
+		color: rgba(0,0,0,.03);
+		position: absolute;
+		width: 100%;
+		text-align: center;
+		left: 0;
+		top: 2%;
+
+	}
+	h1{
+		font-size: 3.4em;
+		margin-bottom: 5px;
+	}
+	p{
+		color: rgba(0,0,0,.4);
+	}
+}
+
+div.col{
+	width: 33.33333333333333%;
+	float: left;
+	padding: 0 10px;
+	ul{
+		margin-bottom: 30px;
+	}
+	p{
+		color: #777;
+		margin: 8px 0 10px 0;
+		line-height: 1.1;
+		font-size: 14px;
+	}
+	pre{
+		background-color: #FFFDE8;
+		border:1px solid #C9C6A6;
+		padding: 10px;
+		@include border-radius(3px);
+		@include transition(all, .4s ease);
+		margin-bottom: 2px;
+		code{
+			font-family: "Courier New", Courier, monospace;
+			font-family: 'Inconsolata', Courier, monospace;
+			font-size: 16px;
+			color: #397F9B;	
+			white-space: normal;
+			word-break: break-all;
+			font-weight: 700;
+		}
+		&:hover{
+			background-color: darken(#FFFDE8, 6%);
+		}
+	}
+}
+.section-title{
+	background-color: #2980b9;
+	padding: 12px;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 700;
+	margin-bottom: 15px;
+	i{
+		font-weight: normal;
+		margin-right: 6px;
+	}
+}
