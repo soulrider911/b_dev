@@ -1,8 +1,9 @@
 
 var gitSnip = $("li pre");
+//Random Success messages
 var words = ["Boom!" , "Whammy!", "Booya!" , "Holler!", "Broskee!" , "All Good!" , "Right on!"];
 
-// main.js
+// Zero Clip Function
 ZeroClipboard.config({ forceHandCursor: true });
 var client = new ZeroClipboard( gitSnip, {
     moviePath: "ZeroClipboard.swf"
@@ -19,6 +20,5 @@ client.on( "load", function(client) {
         setTimeout(function(){
             $(".overlay").fadeOut().removeClass('active');
         },1200);
-    
   });
 });
