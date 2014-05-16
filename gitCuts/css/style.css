@@ -131,18 +131,37 @@ header {
   -webkit-box-shadow: 0 5px 0 #07598b;
   box-shadow: 0 5px 0 #07598b; }
   header i {
-    font-size: 10em;
-    color: rgba(0, 0, 0, 0.03);
+    font-size: 13em;
+    color: rgba(0, 0, 0, 0.04);
     position: absolute;
     width: 100%;
     text-align: center;
     left: 0;
-    top: 1%; }
-  header h1 {
-    font-size: 3.4em;
-    margin-bottom: 5px; }
-  header p {
-    color: rgba(0, 0, 0, 0.4); }
+    top: 1%;
+    z-index: 1; }
+  header article {
+    z-index: 10;
+    position: relative; }
+    header article h1 {
+      font-size: 3.4em;
+      margin-bottom: 5px; }
+    header article p {
+      color: #B0FFB0;
+      margin-bottom: 5px; }
+    header article .share {
+      color: rgba(0, 0, 0, 0.4); }
+      header article .share a {
+        color: #00D3FF;
+        font-size: 14px;
+        text-decoration: none;
+        -moz-transition: all, 0.3s;
+        -o-transition: all, 0.3s;
+        -webkit-transition: all, 0.3s;
+        transition: all, 0.3s; }
+        header article .share a:hover {
+          color: #66e5ff; }
+      header article .share span {
+        vertical-align: 4px; }
 
 div.col {
   width: 33.33333333333333%;
@@ -180,8 +199,11 @@ div.col {
       font-weight: 700; }
       div.col pre code:first-letter {
         color: rgba(0, 0, 0, 0.4); }
-    div.col pre.hover {
-      background-color: #fffac9; }
+    div.col pre.zeroclipboard-is-hover {
+      background-color: #AEF3DB;
+      border-color: #9CE0C9; }
+      div.col pre.zeroclipboard-is-hover code {
+        color: #245163; }
 
 .section-title {
   background-color: #2980b9;

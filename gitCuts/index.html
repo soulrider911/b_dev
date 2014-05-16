@@ -2,11 +2,15 @@
 <html lang='en'>
 	<head>
 	<meta charset='utf-8'> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="Git, github, git commands, git cheat sheet, git shortcuts">
+	<meta name="description" content="A collection of usefull GIT commands to make your life easier. Easily copy to your clipboard!">
+	<meta name="author" content="Brady Sammons">
 	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
 	<script type="text/javascript" src='http://code.jquery.com/jquery-latest.js'></script>
-	<script src="http://www.steamdev.com/zclip/js/jquery.zclip.min.js"></script>
-		<title>Git Short Cuts</title>
+	<script src="http://zeroclipboard.org/javascripts/zc/v1.3.5/ZeroClipboard.js"></script>
+		<title>Git Cheat Sheet</title>
 	</head>
 	<body>
 		<div class="overlay">
@@ -18,10 +22,16 @@
 				</h3>
 			</div>
 		</div>
+
 		<header>
 			<i class="fa fa-github"></i>
-			<h1>Git Cheat Sheet</h1>
-			<p>A list of handy git commands to make your life easier!</p>
+			<article>
+				<h1>Git Cheat Sheet</h1>
+				<p>A list of handy git commands to make your life easier!</p>
+				<div class='share'>
+					<span>Follow me <a href="https://twitter.com/soulrider911">@soulrider911</a></span>
+				</div>
+			</article>
 		</header>
 		<div class="container">
 			<div class="col">
@@ -29,54 +39,54 @@
 				<ul>
 					<li>
 						<p>Clone and Existing Repository</p>
-						<pre><code>$ git clone ssh://user@domain.com/repo.git</code></pre>
+						<pre data-clipboard-text="git clone ssh://user@domain.com/repo.git"><code>$ git clone ssh://user@domain.com/repo.git</code></pre>
 					</li>
 					<li>
 						<p>Create a new local repository</p>
-						<pre><code>$ git init</code></pre>
+						<pre data-clipboard-text="git init"><code>$ git init</code></pre>
 					</li>
 					<li>
 						<p>Clone and Existing Repository</p>
-						<pre><code>$ git clone ssh://user@domain.com/repo.git</code></pre>
+						<pre data-clipboard-text="git clone ssh://user@domain.com/repo.git"><code>$ git clone ssh://user@domain.com/repo.git</code></pre>
 					</li>
 					<li>
 						<p>Clone and Existing Repository</p>
-						<pre><code>$ git clone ssh://user@domain.com/repo.git</code></pre>
+						<pre data-clipboard-text="git clone ssh://user@domain.com/repo.git"><code>$ git clone ssh://user@domain.com/repo.git</code></pre>
 					</li>
 				</ul>
 				<h3 class="section-title"><i class="fa fa-desktop"></i> Local Changes</h3>
 				<ul>
 					<li>
 						<p>Changed files in your working directory</p>
-						<pre><code>$ git status</code></pre>
+						<pre data-clipboard-text="git status"><code>$ git status</code></pre>
 					</li>
 					<li>
 						<p>Changes to tracked files</p>
-						<pre><code>$ git diff</code></pre>
+						<pre data-clipboard-text="git diff"><code>$ git diff</code></pre>
 					</li>
 					<li>
 						<p>Add all current changes to the next commit</p>
-						<pre><code>$ git add .</code></pre>
+						<pre data-clipboard-text="git add ."><code>$ git add .</code></pre>
 					</li>
 					<li>
 						<p>Add some changes in &lt;file&gt; to the next commit</p>
-						<pre><code>$ git add -p &lt;file&gt;</code></pre>
+						<pre data-clipboard-text="git add -p &lt;file&gt;"><code>$ git add -p &lt;file&gt;</code></pre>
 					</li>
 					<li>
 						<p>Commit all local changes in tracked files</p>
-						<pre><code>$ git commit -a</code></pre>
+						<pre data-clipboard-text="git commit -a"><code>$ git commit -a</code></pre>
 					</li>
 					<li>
 						<p>Commit previously staged changes</p>
-						<pre><code>$ git add -p &lt;file&gt;</code></pre>
+						<pre data-clipboard-text="git add -p &lt;file&gt;"><code>$ git add -p &lt;file&gt;</code></pre>
 					</li>
 					<li>
 						<p>Add some changes in <file> to the next commit</p>
-						<pre><code>$ git commit</code></pre>
+						<pre data-clipboard-text="git commit"><code>$ git commit</code></pre>
 					</li>
 					<li>
 						<p>Change the last commit <br> <em>Don‘t amend published commits!</em></p>
-						<pre><code>$ git commit --amend</code></pre>
+						<pre data-clipboard-text="git commit --amend"><code>$ git commit --amend</code></pre>
 					</li>
 				</ul>
 			</div>
@@ -86,62 +96,62 @@
 				<ul>
 					<li>
 						<p>List all existing branches</p>
-						<pre><code>$ git branch</code></pre>
+						<pre data-clipboard-text="git branch"><code>$ git branch</code></pre>
 					</li>
 					<li>
 						<p>Switch HEAD branch</p>
-						<pre><code>$ git checkout &lt;branch&gt;</code></pre>
+						<pre data-clipboard-text="git checkout &lt;branch&gt;"><code>$ git checkout &lt;branch&gt;</code></pre>
 					</li>
 					<li>
 						<p>Create a new branch based on your current HEAD</p>
-						<pre><code>$ git branch &lt;new-branch&gt; </code></pre>
+						<pre data-clipboard-text="git branch &lt;new-branch&gt; "><code>$ git branch &lt;new-branch&gt; </code></pre>
 					</li>
 					<li>
 						<p>Create a new tracking branch based on a remote branch</p>
-						<pre><code>$ git checkout --track &lt;remote/branch&gt;</code></pre>
+						<pre data-clipboard-text="git checkout --track &lt;remote/branch&gt;"><code>$ git checkout --track &lt;remote/branch&gt;</code></pre>
 					</li>
 					<li>
 						<p>Delete a local branch</p>
-						<pre><code>$ git branch -d &lt;branch&gt;</code></pre>
+						<pre data-clipboard-text="git branch -d &lt;branch&gt;"><code>$ git branch -d &lt;branch&gt;</code></pre>
 					</li>
 					<li>
 						<p>Mark the current commit with a tag</p>
-						<pre><code>$ git tag &lt;tag-name&gt;</code></pre>
+						<pre data-clipboard-text="git tag &lt;tag-name&gt;"><code>$ git tag &lt;tag-name&gt;</code></pre>
 					</li>
 				</ul>
 				<h3 class="section-title"><i class="fa fa-refresh"></i> Update &amp; Publish</h3>
 				<ul>
 					<li>
 						<p>List all currently configured remotes</p>
-						<pre><code>$ git remote -v</code></pre>
+						<pre data-clipboard-text="git remote -v"><code>$ git remote -v</code></pre>
 					</li>
 					<li>
 						<p>Show information about a remote</p>
-						<pre><code>$ git remote show &lt;remote&gt;</code></pre>
+						<pre data-clipboard-text="git remote show &lt;remote&gt;"><code>$ git remote show &lt;remote&gt;</code></pre>
 					</li>
 					<li>
 						<p>Add new remote repository, named &lt;remote&gt;</p>
-						<pre><code>$ git remote add &lt;remote&gt; &lt;url&gt; </code></pre>
+						<pre data-clipboard-text="git remote add &lt;remote&gt; &lt;url&gt; "><code>$ git remote add &lt;remote&gt; &lt;url&gt; </code></pre>
 					</li>
 					<li>
 						<p>Download all changes from &lt;remote&gt;, but don‘t integrate into HEAD</p>
-						<pre><code>$ git fetch &lt;remote&gt;</code></pre>
+						<pre data-clipboard-text="git fetch &lt;remote&gt;"><code>$ git fetch &lt;remote&gt;</code></pre>
 					</li>
 					<li>
 						<p>Download changes and directly merge/integrate into HEAD</p>
-						<pre><code>$ git pull &lt;remote&gt; &lt;branch&gt;</code></pre>
+						<pre data-clipboard-text="git pull &lt;remote&gt; &lt;branch&gt;"><code>$ git pull &lt;remote&gt; &lt;branch&gt;</code></pre>
 					</li>
 					<li>
 						<p>Publish local changes on a remote</p>
-						<pre><code>$ git push &lt;remote&gt; &lt;branch&gt;</code></pre>
+						<pre data-clipboard-text="git push &lt;remote&gt; &lt;branch&gt;"><code>$ git push &lt;remote&gt; &lt;branch&gt;</code></pre>
 					</li>
 					<li>
 						<p>Delete a branch on the remote</p>
-						<pre><code>$ git branch -dr &lt;remote/branch%gt;</code></pre>
+						<pre data-clipboard-text="git branch -dr &lt;remote/branch&gt;"><code>$ git branch -dr &lt;remote/branch&gt;</code></pre>
 					</li>
 					<li>
 						<p>Publish your tags</p>
-						<pre><code>$ git push --tags</code></pre>
+						<pre data-clipboard-text="git push --tags"><code>$ git push --tags</code></pre>
 					</li>
 				</ul>
 			</div>
@@ -151,56 +161,59 @@
 				<ul>
 					<li>
 						<p>Merge &lt;branch&gt; into your current HEAD</p>
-						<pre><code>$ git merge &lt;branch&gt;</code></pre>
+						<pre data-clipboard-text="git merge &lt;branch&gt;"><code>$ git merge &lt;branch&gt;</code></pre>
 					</li>
 					<li>
 						<p>Rebase your current HEAD onto &lt;branch&gt; <br><em>Don‘t rebase published commits!</em></p>
 						
-						<pre><code>$ git rebase &lt;branch&gt;</code></pre>
+						<pre data-clipboard-text="git rebase &lt;branch&gt;"><code>$ git rebase &lt;branch&gt;</code></pre>
 					</li>
 					<li>
 						<p>Abort a rebase</p>
-						<pre><code>$ git rebase --abort</code></pre>
+						<pre data-clipboard-text="git rebase --abort"><code>$ git rebase --abort</code></pre>
 					</li>
 					<li>
 						<p>Continue a rebase after resolving conflicts</p>
-						<pre><code>$ git rebase --continue</code></pre>
+						<pre data-clipboard-text="git rebase --continue"><code>$ git rebase --continue</code></pre>
 					</li>
 					<li>
 						<p>Use your configured merge tool to solve conflicts</p>
-						<pre><code>$ git mergetool</code></pre>
+						<pre data-clipboard-text="git mergetool"><code>$ git mergetool</code></pre>
 					</li>
 					<li>
-						<p>Use your editor to manually solve conflicts and (after resolving) mark file as resolved</p>
-						<pre><code>$ git add &lt;resolved-file&gt;</code></pre>
-						<pre><code>$ git rm &lt;resolved-file&gt;</code></pre>
+						<p>Use your editor to manually solve conflicts</p>
+						<pre data-clipboard-text="git add &lt;resolved-file&gt;"><code>$ git add &lt;resolved-file&gt;</code></pre>
+					</li>
+					<li>
+						<p>After resolving mark file as resolved</p>
+						<pre data-clipboard-text="git rm &lt;resolved-file&gt;"><code>$ git rm &lt;resolved-file&gt;</code></pre>
 					</li>
 				</ul>
 				<h3 class="section-title"><i class='fa fa-undo'></i> Undo</h3>
 				<ul>
 					<li>
 						<p>Discard all local changes in your working directory</p>
-						<pre><code>$ git reset --hard HEAD</code></pre>
+						<pre data-clipboard-text="git reset --hard HEAD"><code>$ git reset --hard HEAD</code></pre>
 					</li>
 					<li>
 						<p>Discard local changes in a specific file</p>
-						<pre><code>$ git checkout <file>&lt;file&gt;</code></pre>
+						<pre data-clipboard-text="git checkout <file>&lt;file&gt;"><code>$ git checkout <file>&lt;file&gt;</code></pre>
 					</li>
 					<li>
 						<p>Revert a commit (by producing a new commit with contrary changes)</p>
-						<pre><code>$ git revert &lt;commit&gt;</code></pre>
+						<pre data-clipboard-text="git revert &lt;commit&gt;"><code>$ git revert &lt;commit&gt;</code></pre>
 					</li>
 					<li>
 						<p>Reset your HEAD pointer to a previous commit &amp; discard all changes since then</p>
-						<pre><code>$ git reset --hard &lt;commit&gt;</code></pre>
+						<pre data-clipboard-text="git reset --hard &lt;commit&gt;"><code>$ git reset --hard &lt;commit&gt;</code></pre>
 					</li>
 					<li>
 						<p>Reset your HEAD pointer to a previous commit &amp; preserve all changes as unstaged changes</p>
-						<pre><code>$ git reset &lt;commit&gt;</code></pre>
+						<pre data-clipboard-text="git reset &lt;commit&gt;"><code>$ git reset &lt;commit&gt;</code></pre>
 					</li>
 					<li>
 						<p>Reset your HEAD pointer to a previous commit &amp; preserve uncommitted local changes</p>
-						<pre><code>$ git reset --keep &lt;commit&gt;</code></pre>	
+						<pre data-clipboard-text="git reset --keep &lt;commit&gt;"><code>$ git reset --keep &lt;commit&gt;</code></pre>	
 					</li>
 				</ul>
 			</div>

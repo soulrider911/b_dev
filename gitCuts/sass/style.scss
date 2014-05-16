@@ -84,21 +84,42 @@ header{
 	margin-bottom: 30px;
 	@include box-shadow(0 5px 0 rgba(7,89,139,1));
 	i{
-		font-size: 10em;
-		color: rgba(0,0,0,.03);
+		font-size: 13em;
+		color: rgba(0,0,0,.04);
 		position: absolute;
 		width: 100%;
 		text-align: center;
 		left: 0;
 		top: 1%;
+		z-index: 1;
 
 	}
-	h1{
-		font-size: 3.4em;
-		margin-bottom: 5px;
-	}
-	p{
-		color: rgba(0,0,0,.4);
+	article{
+		z-index: 10;
+		position: relative;
+		h1{
+			font-size: 3.4em;
+			margin-bottom: 5px;
+		}
+		p{
+			color: #B0FFB0;
+			margin-bottom: 5px;
+		}
+		.share{
+			color: rgba(0,0,0,.4);
+			a{
+				color: #00D3FF;
+				font-size: 14px;
+				text-decoration: none;
+				@include transition(all, .3s);
+				&:hover{
+					color: lighten(#00D3FF, 20%);
+				}
+			}
+			span{
+				vertical-align: 4px;
+			}
+		}
 	}
 }
 
@@ -137,8 +158,12 @@ div.col{
 				color: rgba(0,0,0,.4);
 			}
 		}
-		&.hover{
-			background-color: darken(#FFFDE8, 6%);
+		&.zeroclipboard-is-hover{
+			background-color: #AEF3DB;
+			border-color: #9CE0C9;
+			code{
+				color: darken(#397F9B, 15%);
+			}
 		}
 	}
 }
