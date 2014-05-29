@@ -14,7 +14,7 @@
     /* ---------------------------------------- */  
     function homeSizer(){
         var home = $("#home");
-        var winHeight = $(window).height();
+        var winHeight = $(window).height() + 10;
         home.css("height" , winHeight);
         console.log(winHeight);
     }

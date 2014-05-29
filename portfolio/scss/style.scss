@@ -4,21 +4,42 @@
 @import "animation";
 @import "foundation";
 @import "compass/css3";
-@import url(http://fonts.googleapis.com/css?family=Oswald:700);
 
+/* Import fancy fonts */	
+/* ---------------------------------------- */ 
+@import url("//hello.myfonts.net/count/2b0910");
+ 
+@font-face {
+	font-family: 'CoreMagic';
+	src: url('webfonts/2B0910_0_0.eot');
+	src: url('webfonts/2B0910_0_0.eot?#iefix') format('embedded-opentype'),
+		 url('webfonts/2B0910_0_0.woff') format('woff'),
+		 url('webfonts/2B0910_0_0.ttf') format('truetype');
+}
+ 
+@font-face {
+	font-family: 'CoreMagic3DLine1';
+	src: url('webfonts/2B0910_1_0.eot');
+	src: url('webfonts/2B0910_1_0.eot?#iefix') format('embedded-opentype'),
+		 url('webfonts/2B0910_1_0.woff') format('woff'),
+		 url('webfonts/2B0910_1_0.ttf') format('truetype');
+}
+
+/* Global Typography */	
+/* ---------------------------------------- */ 
 body{
 	font-weight: 400;
 }
-/* Global Typography */	
-/* ---------------------------------------- */ 
-.fancy{
-	font-family: 'Oswald', 'sans-serif';
+.fancy { font-family: CoreMagic; }
+.fancy2 { font-family: CoreMagic3DLine1; }
+
+.fancy,
+.fancy2{
 	line-height: 1;
-	letter-spacing: .01em;
+	letter-spacing: -.2em;
 	font-size: 4em;
-	font-weight: 700;
+	font-weight: noemal !important;
 	color: $midnightBlue;
-	text-shadow: 1px 1px 0 white, 2px 2px 0 $midnightBlue, 3px 3px 0 $midnightBlue;
 }
 a{
 	&:hover{
@@ -85,6 +106,30 @@ hr.fancy{
 		margin-left: -43px;
 		margin-bottom: 2rem;
 	}
+}
+
+div.hr{
+	position: relative;
+	&:after{
+			content: '';
+			display: block;
+			width: 100%;
+			border-bottom: 3px dashed $clouds;
+			position: absolute;
+			z-index: 0;
+			top: 50%;
+		}
+	p{	
+		font-size: 1.2rem;
+		z-index: 10;
+		padding: 0 10px;
+		color: $grayLight;
+		background-color: white;
+		display: inline-block;
+		margin-bottom:0;
+		font-weight: 300;
+		position: relative;
+	}	
 }
 /* Specific Icon Sizes */	
 /* ---------------------------------------- */ 
@@ -174,38 +219,79 @@ header#home > div{
 	right: 0;
 	bottom: 0;
 	margin: auto;
-	height: 300px;
+	height: 515px;
+}
+.logo{
+	display: inline-block;
+	background: url('../img/logo.svg');
+	text-indent: -9999px;
+	width: 140px;
+	height: 140px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	@include background-size(100%);
+	@include box-shadow(0 0 5px 1px rgba(0,0,0,.07));
+	@include border-radius(50%);
+
 }
 .headline{
-	h4{
-		color: #777;
+	.name{
+		display: inline-block;
+		position: relative;
+		width: 694px;
+		height: 150px;
+		text-align: center;
+		margin: 0 auto;
+		font-size: 40px;
+		margin-bottom: 8px;
+		left: 10px;
+		>div{
+			position: absolute;
+			&.fancy{
+				color: $midnightBlue;
+			}
+			&.fancy2{
+				color: $brand;
+			}
+		}
+		span{
+			position: relative;
+			&:nth-child(2){
+				left:-15px;
+			}
+			&:nth-child(3){
+				left:-19px;
+			}
+			&:nth-child(4){
+				left:-28px;
+			}
+			&:last-child{
+				left:-51px;
+			}
+		}
 	}
-	h1{
+	h1.fancy,
+	h2.fancy{
 		margin:0;
-		margin-bottom: 10px;
-		font-size: 5em;
+	}
+	h1.fancy{
+		margin-top: 10px;
+		font-size: 7.5rem;
+		line-height: .8;
+	}
+	h2.fancy{
+		font-size: 2.6rem;
+		color: lighten($midnightBlue, 20%);
 	}
 	.rotator{
 		color: $greenSea;
 		font-weight: 100;
 		text-transform: uppercase;
-		line-height: 1;
-		border: 1px solid #eee;
-		border-left: none;
-		border-right: none;
-		max-width: 650px;
 		font-size: 2em;
-		margin: 20px auto 15px auto;
-		padding: 8px 0;
 		span{
 			font-weight: 400;
 			color: $midnightBlue;
 		}
-	}
-	p{
-		color: $grayLight;
-		margin-bottom:0;
-		font-weight: 300;
 	}
 }
 
