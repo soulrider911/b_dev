@@ -1,6 +1,44 @@
+@charset "UTF-8";
+/* Import fancy fonts */
+/* ---------------------------------------- */
+/*
+	 * @license
+	 * MyFonts Webfont Build ID 2820368, 2014-05-29T17:28:34-0400
+	 * 
+	 * The fonts listed in this notice are subject to the End User License
+	 * Agreement(s) entered into by the website owner. All other parties are 
+	 * explicitly restricted from using the Licensed Webfonts(s).
+	 * 
+	 * You may obtain a valid license at the URLs below.
+	 * 
+	 * Webfont: Core Magic by S-Core
+	 * URL: http://www.myfonts.com/fonts/s-core/core-magic/regular/
+	 * 
+	 * Webfont: Core Magic 3D Line1 by S-Core
+	 * URL: http://www.myfonts.com/fonts/s-core/core-magic/3d-line1/
+	 * 
+	 * 
+	 * License: http://www.myfonts.com/viewlicense?type=web&buildid=2820368
+	 * Licensed pageviews: 10,000
+	 * Webfonts copyright: Copyright (c) 2014 by S-Core Co., Ltd.. All rights reserved.
+	 * 
+	 * © 2014 MyFonts Inc
+*/
+@import url("http://hello.myfonts.net/count/2b0910");
+@font-face {
+  font-family: 'CoreMagic';
+  src: url("../fonts/2B0910_0_0.eot");
+  src: url("../fonts/2B0910_0_0.eot?#iefix") format("embedded-opentype"), url("../fonts/2B0910_0_0.woff") format("woff"), url("../fonts/2B0910_0_0.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'CoreMagic3DLine1';
+  src: url("../fonts/2B0910_1_0.eot");
+  src: url("../fonts/2B0910_1_0.eot?#iefix") format("embedded-opentype"), url("../fonts/2B0910_1_0.woff") format("woff"), url("../fonts/2B0910_1_0.ttf") format("truetype");
+}
+
 /* Colors */
 /* ---------------------------------------- */
-@import url("//hello.myfonts.net/count/2b0910");
 @font-face {
   font-family: 'portfolio-icons';
   src: url("../fonts/portfolio-icons.eot?jar80i");
@@ -306,28 +344,24 @@
 
 @-webkit-keyframes pulse {
   50% {
-    -webkit-transform: scale(1.3);
     fill: #1ee6bc;
   }
 }
 
 @-moz-keyframes pulse {
   50% {
-    -moz-transform: scale(1.3);
     fill: #1ee6bc;
   }
 }
 
 @-o-keyframes pulse {
   50% {
-    -o-transform: scale(1.3);
     fill: #1ee6bc;
   }
 }
 
 @keyframes pulse {
   50% {
-    transform: scale(1.3);
     fill: #1ee6bc;
   }
 }
@@ -6926,20 +6960,6 @@ th.hide-for-touch {
   display: table-cell !important;
 }
 
-/* Import fancy fonts */
-/* ---------------------------------------- */
-@font-face {
-  font-family: 'CoreMagic';
-  src: url("webfonts/2B0910_0_0.eot");
-  src: url("webfonts/2B0910_0_0.eot?#iefix") format("embedded-opentype"), url("webfonts/2B0910_0_0.woff") format("woff"), url("webfonts/2B0910_0_0.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: 'CoreMagic3DLine1';
-  src: url("webfonts/2B0910_1_0.eot");
-  src: url("webfonts/2B0910_1_0.eot?#iefix") format("embedded-opentype"), url("webfonts/2B0910_1_0.woff") format("woff"), url("webfonts/2B0910_1_0.ttf") format("truetype");
-}
-
 /* Global Typography */
 /* ---------------------------------------- */
 body {
@@ -7037,6 +7057,7 @@ hr.fancy:after {
 
 div.hr {
   position: relative;
+  margin: 10px 0;
 }
 div.hr:after {
   content: '';
@@ -7163,12 +7184,13 @@ header#home > div {
   right: 0;
   bottom: 0;
   margin: auto;
-  height: 515px;
+  height: 435px;
+  width: 580px;
 }
 
 .logo {
   display: inline-block;
-  background: url("../img/logo.svg");
+  background: url("../img/logo.svg") no-repeat;
   text-indent: -9999px;
   width: 140px;
   height: 140px;
@@ -7178,26 +7200,18 @@ header#home > div {
   -moz-background-size: 100%;
   -o-background-size: 100%;
   background-size: 100%;
-  -webkit-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.07);
-  -moz-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.07);
-  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.07);
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  border-radius: 50%;
 }
 
 .headline .name {
   display: inline-block;
   position: relative;
-  width: 694px;
-  height: 150px;
+  width: 557px;
+  height: 113px;
   text-align: center;
   margin: 0 auto;
-  font-size: 40px;
+  font-size: 32px;
   margin-bottom: 8px;
-  left: 10px;
+  left: 15px;
 }
 .headline .name > div {
   position: absolute;
@@ -7206,6 +7220,8 @@ header#home > div {
   color: #384047;
 }
 .headline .name > div.fancy2 {
+  top: 10px;
+  left: 1px;
   color: #1ee6bc;
 }
 .headline .name span {
@@ -7228,23 +7244,77 @@ header#home > div {
   margin: 0;
 }
 .headline h1.fancy {
-  margin-top: 10px;
-  font-size: 7.5rem;
-  line-height: .8;
+  font-size: 6rem;
+  color: #1ee6bc;
+  text-shadow: 1px 1px 0 #384047, 2px 2px 0 #384047;
 }
 .headline h2.fancy {
-  font-size: 2.6rem;
-  color: #657380;
+  font-size: 2.1rem;
+  margin-top: -15px;
 }
-.headline .rotator {
-  color: #16a085;
-  font-weight: 100;
+.headline .banner-wrap {
+  z-index: 2;
+  position: relative;
+}
+.headline .banner {
+  width: 90%;
+  position: relative;
+  background-color: #434d55;
+  text-align: center;
+  padding: 1em 1em;
+  margin: 2em auto 3em;
+  border: 1px solid #fff;
+}
+.headline .banner .logo {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  margin-left: -50px;
+  left: 50%;
+  top: -35%;
+}
+.headline .banner:before, .headline .banner:after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: -.5em;
+  border: 1.5em solid #2d3339;
+  z-index: -1;
+}
+.headline .banner:before {
+  left: -2.2em;
+  border-right-width: 2em;
+  border-left-color: transparent;
+}
+.headline .banner:after {
+  right: -2.2em;
+  border-left-width: 2em;
+  border-right-color: transparent;
+}
+.headline .banner .banner-content {
+  *zoom: 1;
+}
+.headline .banner .banner-content span {
+  color: #1ee6bc;
   text-transform: uppercase;
-  font-size: 2em;
+  font-size: 1.4rem;
+  font-weight: 200;
+  display: block;
+  text-align: center;
 }
-.headline .rotator span {
-  font-weight: 400;
-  color: #384047;
+.headline .banner .banner-content span:first-of-type {
+  float: left;
+  padding-left: 20px;
+}
+.headline .banner .banner-content span:last-of-type {
+  float: right;
+}
+.headline .banner .banner-content:before, .headline .banner .banner-content:after {
+  content: " ";
+  display: table;
+}
+.headline .banner .banner-content:after {
+  clear: both;
 }
 
 /* Sections */

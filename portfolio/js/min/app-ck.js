@@ -5,9 +5,9 @@
 
     /* Text Rotator */
     /* ---------------------------------------- */
-    $(".rotator span").textrotator({
+    $(".rotator").textrotator({
       animation: "fade", // You can pick the way it animates when rotating through words. Options are dissolve (default), fade, flip, flipUp, flipCube, flipCubeUp and spin.
-      speed: 2000 // How many milliseconds until the next word show.
+      speed: 1600 // How many milliseconds until the next word show.
     });
 
     /* Full height Home section */
@@ -66,19 +66,23 @@
     $(".drawer-toggle").on("click" , function(e){
         var body = $("body");
         var nav = $("#drawer-nav");
+        var speed = 300;
+        var open = false;
+        
+        if( !body.is(".open") ){
+             
+            body.addClass("open").animate({paddingLeft : 180}, speed, function(){
+                $('#gallery').isotope();               
+            });
+            nav.animate({left : 0},speed);
+           
+        }else{
 
-        if(body.is(".open")){
-            body.removeClass("open").animate({paddingLeft : 0}, function(){
+             body.removeClass("open").animate({paddingLeft : 0}, speed, function(){
                 $('#gallery').isotope();
             });
-            nav.animate({left : -180});
-        }else{
-            body.addClass("open").animate({paddingLeft : 180}, function(){
-                $('#gallery').isotope();                
-            });
-            nav.animate({left : 0});
+            nav.animate({left : -180},speed);
         }
-
         $('#gallery').isotope();
     });
 

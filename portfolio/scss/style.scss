@@ -1,29 +1,51 @@
+/* Import fancy fonts */	
+/* ---------------------------------------- */ 
+/*
+	 * @license
+	 * MyFonts Webfont Build ID 2820368, 2014-05-29T17:28:34-0400
+	 * 
+	 * The fonts listed in this notice are subject to the End User License
+	 * Agreement(s) entered into by the website owner. All other parties are 
+	 * explicitly restricted from using the Licensed Webfonts(s).
+	 * 
+	 * You may obtain a valid license at the URLs below.
+	 * 
+	 * Webfont: Core Magic by S-Core
+	 * URL: http://www.myfonts.com/fonts/s-core/core-magic/regular/
+	 * 
+	 * Webfont: Core Magic 3D Line1 by S-Core
+	 * URL: http://www.myfonts.com/fonts/s-core/core-magic/3d-line1/
+	 * 
+	 * 
+	 * License: http://www.myfonts.com/viewlicense?type=web&buildid=2820368
+	 * Licensed pageviews: 10,000
+	 * Webfonts copyright: Copyright (c) 2014 by S-Core Co., Ltd.. All rights reserved.
+	 * 
+	 * © 2014 MyFonts Inc
+*/
+@import url("http://hello.myfonts.net/count/2b0910");
+ @font-face {
+	font-family: 'CoreMagic';
+	src: url('../fonts/2B0910_0_0.eot');
+	src: url('../fonts/2B0910_0_0.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/2B0910_0_0.woff') format('woff'),
+		 url('../fonts/2B0910_0_0.ttf') format('truetype');
+}
+ @font-face {
+	font-family: 'CoreMagic3DLine1';
+	src: url('../fonts/2B0910_1_0.eot');
+	src: url('../fonts/2B0910_1_0.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/2B0910_1_0.woff') format('woff'),
+		 url('../fonts/2B0910_1_0.ttf') format('truetype');
+}
+
+//scss Imports
 @import "settings";
 @import "colors";
 @import "icons";
 @import "animation";
 @import "foundation";
 @import "compass/css3";
-
-/* Import fancy fonts */	
-/* ---------------------------------------- */ 
-@import url("//hello.myfonts.net/count/2b0910");
- 
-@font-face {
-	font-family: 'CoreMagic';
-	src: url('webfonts/2B0910_0_0.eot');
-	src: url('webfonts/2B0910_0_0.eot?#iefix') format('embedded-opentype'),
-		 url('webfonts/2B0910_0_0.woff') format('woff'),
-		 url('webfonts/2B0910_0_0.ttf') format('truetype');
-}
- 
-@font-face {
-	font-family: 'CoreMagic3DLine1';
-	src: url('webfonts/2B0910_1_0.eot');
-	src: url('webfonts/2B0910_1_0.eot?#iefix') format('embedded-opentype'),
-		 url('webfonts/2B0910_1_0.woff') format('woff'),
-		 url('webfonts/2B0910_1_0.ttf') format('truetype');
-}
 
 /* Global Typography */	
 /* ---------------------------------------- */ 
@@ -110,6 +132,7 @@ hr.fancy{
 
 div.hr{
 	position: relative;
+	margin: 10px 0;
 	&:after{
 			content: '';
 			display: block;
@@ -219,38 +242,39 @@ header#home > div{
 	right: 0;
 	bottom: 0;
 	margin: auto;
-	height: 515px;
+	height: 435px;
+	width: 580px;
 }
 .logo{
 	display: inline-block;
-	background: url('../img/logo.svg');
+	background: url('../img/logo.svg') no-repeat;
 	text-indent: -9999px;
 	width: 140px;
 	height: 140px;
 	margin: 0 auto;
 	margin-bottom: 10px;
 	@include background-size(100%);
-	@include box-shadow(0 0 5px 1px rgba(0,0,0,.07));
-	@include border-radius(50%);
 
 }
 .headline{
 	.name{
 		display: inline-block;
 		position: relative;
-		width: 694px;
-		height: 150px;
+		width: 557px;
+		height: 113px;
 		text-align: center;
 		margin: 0 auto;
-		font-size: 40px;
+		font-size: 32px;
 		margin-bottom: 8px;
-		left: 10px;
+		left: 15px;
 		>div{
 			position: absolute;
 			&.fancy{
 				color: $midnightBlue;
 			}
 			&.fancy2{
+				top: 10px;
+				left: 1px;
 				color: $brand;
 			}
 		}
@@ -275,22 +299,72 @@ header#home > div{
 		margin:0;
 	}
 	h1.fancy{
-		margin-top: 10px;
-		font-size: 7.5rem;
-		line-height: .8;
+		font-size: 6rem;
+		color: $brand;
+		text-shadow: 1px 1px 0 $midnightBlue, 2px 2px 0 $midnightBlue;
 	}
 	h2.fancy{
-		font-size: 2.6rem;
-		color: lighten($midnightBlue, 20%);
+		font-size: 2.1rem;
+		margin-top: -15px;
 	}
-	.rotator{
-		color: $greenSea;
-		font-weight: 100;
-		text-transform: uppercase;
-		font-size: 2em;
-		span{
-			font-weight: 400;
-			color: $midnightBlue;
+	.banner-wrap{
+		z-index: 2;
+		position: relative;
+	}
+	.banner{
+		width: 90%;
+		position: relative;
+		background-color: lighten($midnightBlue, 5%);
+		text-align: center;
+		padding: 1em 1em;
+		margin: 2em auto 3em;
+		border: 1px solid #fff;
+		.logo{
+			$size: 100px;
+			position: absolute;
+			width: $size;
+			height: $size;
+			margin-left: - $size / 2;
+			left: 50%;
+			top: -35%;
+		}
+		&:before, 
+		&:after{
+			content: "";
+			position: absolute;
+			display: block;
+			top: -.5em;
+			border: 1.5em solid darken($midnightBlue, 5%);
+			z-index: -1;
+		}
+		&:before{
+			left: -2.2em;
+			border-right-width: 2em;
+			border-left-color: transparent;
+		}
+		&:after{
+			right: -2.2em;
+			border-left-width: 2em;
+			border-right-color: transparent;
+		}
+		.banner-content{
+			span{
+				color: $brand;
+				text-transform: uppercase;
+				font-size: 1.4rem;
+				font-weight: 200;
+				display: block;
+				text-align: center;
+				
+				&:first-of-type{
+					float: left;
+					padding-left: 20px;
+				}
+				&:last-of-type{
+					float: right;
+				}
+			}
+			@include clearfix();
 		}
 	}
 }
