@@ -1,0 +1,375 @@
+/* ----------------------------------------
+	Site Name: easyHire.me
+	Author: Brady Sammons
+	Version 1.0
+	URL: http://www.easyhire.me
+---------------------------------------- */ 
+
+/* Site Structure =========================
+
+  _global     Gobal Style Declarations   
+  _menu       Main Site Navigation 
+	_hero 		  Header Definitions
+	_sections 	Various Section Definitions
+	_footer 		Footer Definitions
+  _animation  CSS3 Animations
+	
+---------------------------------------- */ 
+
+
+
+@import "settings";			//glogal settings in this file
+@import "compass/css3";		//Compass Library
+
+//@import "foundation";
+// Or selectively include components
+@import
+  "foundation/components/accordion",
+  "foundation/components/block-grid",
+  "foundation/components/breadcrumbs",
+  "foundation/components/button-groups",
+  "foundation/components/buttons",
+  "foundation/components/clearing",
+  "foundation/components/dropdown",
+  "foundation/components/dropdown-buttons",
+  "foundation/components/flex-video",
+  "foundation/components/forms",
+  "foundation/components/grid",
+  "foundation/components/inline-lists",
+  "foundation/components/keystrokes",
+  "foundation/components/labels",
+  "foundation/components/magellan",
+  "foundation/components/pagination",
+  "foundation/components/panels",
+  "foundation/components/pricing-tables",
+  "foundation/components/progress-bars",
+  "foundation/components/reveal",
+  "foundation/components/side-nav",
+  "foundation/components/split-buttons",
+  "foundation/components/sub-nav",
+  "foundation/components/tables",
+  "foundation/components/tabs",
+  "foundation/components/thumbs",
+  "foundation/components/tooltips",
+  "foundation/components/top-bar",
+  "foundation/components/type",
+  "foundation/components/visibility";
+
+
+/* Gobal Style Declarations 
+---------------------------------------- */ 
+body{
+  background-color: #fafafa;
+}
+.icon-round{
+  @include border-radius(900px);
+  padding: 40px;
+  border: 3px solid;
+  border-color: #fff;
+  margin-bottom: 1rem;
+}
+
+p{
+  font-weight: 200;
+  letter-spacing: .05em;
+  line-height: 1.6;
+  text-align: left;
+}
+ul{
+  text-align: left;
+}
+
+[data-magellan-expedition]{
+  z-index: inherit;
+  min-width: 0;
+  padding: 0 !important;
+}
+
+/*---fluid Vieo---*/
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.video-container iframe,  
+.video-container object,  
+.video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+ul.checklist{
+  list-style-type: none;
+  li{
+    position: relative;
+    margin-left: 22px;
+    line-height: 1.4;
+    margin-bottom: 15px;
+    color: #777;
+    font-weight: 200;
+    letter-spacing: .05em;
+    &:before{
+      left: -22px;
+      position: absolute;
+      content: '\f00c';
+      font-family: "iconFont";
+      display: inline-block;
+      font-size: 80%;
+      line-height: 140%;
+      color: rgba(0, 147, 68, .7);
+    }
+  }
+}
+
+/*---Pricing Tables---*/
+.pricing-table{
+  .title{
+    text-transform: uppercase;
+  }
+  .price{
+    span{
+      font-size: 50%;
+      position: relative;
+      top: -10px;
+    }
+    em{
+      font-size: 50%;
+      font-style: normal;
+    }
+  }
+  &.basic{
+    border-color: #419294;
+    .button{
+      background-color: #419294;
+      &:hover{
+        background-color: darken(#419294, 5%);
+      }
+    }
+    .title{
+      background-color: #419294;
+    }
+  }
+  &.premium{
+    border-color: #2C9267;
+    .title{
+      background-color: #2C9267;
+    }
+    .button{
+      background-color: #2C9267;
+      &:hover{
+        background-color: darken(#2C9267, 5%);
+      }
+    }
+  }
+}
+
+
+  
+
+
+/* Main Site Navigation
+---------------------------------------- */ 
+.top-bar{
+  @include box-shadow(0 2px 3px rgba(0,0,0,.2));
+}
+.top-bar-section li a{
+  @include transition(all .3s ease);
+}
+.top-bar-section li.active a,
+.top-bar-section li a:hover{
+  @include box-shadow(inset 0 -3px 0 $primary-color);
+}
+
+a#site-logo{
+  background: url('../img/logo.png') no-repeat center center;
+  text-indent: -9999px;
+  width: 225px;
+  height: 60px;
+  @include background-size(170px); 
+}
+
+/* hero Definitions
+---------------------------------------- */ 
+.hero{
+  background: #BAD9C1 url("../img/hero_bg.png") no-repeat top center;
+  @include background-size(cover); 
+  padding-top: 3.5rem;
+  h1{
+    font-weight: 200;
+    letter-spacing: .05em;
+    font-size: 3.5rem;
+    text-align: center;
+  }
+}
+
+/* Various Section Definitions */  
+/* ---------------------------------------- */ 
+body>section,
+body>footer{
+  padding: 5rem 0;
+}
+body>section{
+  h2.section-title{
+    font-weight: 100;
+    letter-spacing: .04em;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 2rem;
+  }
+  h4{
+    font-weight: 100;
+    letter-spacing: .05em;
+  }
+}
+
+section#process{
+  background-color: $primary-color;
+  color: #fff;
+  position: relative;
+  p, h2, h4{
+    color: #fff;
+  }
+  div.columns{
+    z-index: 5;
+  }
+  .icon-round{
+    color: #fff;
+    background-color: $primary-color;
+  }
+  #timeline{
+    position: absolute;
+    width: 63%;
+    max-width: 730px;
+    margin-left: 125px;
+    height: 2px;
+    top: 233px;
+    z-index: 1;
+    overflow: hidden;
+    >span{
+      width: 120%;
+      border-top: 5px dotted #fff;
+      height: 2px;
+      position: absolute;
+      display: block;
+      -webkit-animation: timeline .5s linear infinite;
+      -moz-animation: timeline .5s linear infinite;
+      -ms-animation: timeline .5s linear infinite;
+      -o-animation: timeline .5s linear infinite;
+      animation: timeline .5s linear infinite;
+    }
+  }
+}
+
+section#user-benefits{
+  background-color: #eee;
+  .columns{
+    .icon{
+      color: $primary-color;
+    }
+  }
+}
+section#faq{
+  background-color: #EEEEEE;
+}
+
+section#sign-up{
+  form input[type='text'],
+  form input[type='email']{
+    padding: 1rem;
+    height: 3rem;
+    border: 1px solid #ddd;
+    background-color: #fafafa;
+    @include box-shadow(none);
+    &:hover{
+      border: 1px solid #B4B4B4;
+    }
+    &:focus{
+      background-color: #fff;
+      outline:none;
+      border: 1px solid #B4B4B4;
+    }
+  }
+}
+footer{
+  background-color: #333;
+  color: #fafafa;
+  position: relative;
+  img{
+    @include opacity(.7);
+  }
+  [class*="block-grid-"] > li{
+    padding-bottom: 0;
+  }
+  #top{
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -40px;
+    font-family: "iconFont";
+    display: inline-block;
+    padding: 10px 25px 0 25px;
+    font-size: 30px;
+    color: rgba(255,255,255,.7);
+    background-color: #333;
+    @include border-radius(100px 100px 0 0);
+    &:hover{
+      color: #fff;
+    }
+  }
+  a{
+    color: rgba(255,255,255,.4);
+    &:hover{
+      color: rgba(255,255,255,.7);
+    }
+  }
+}
+#copyright{
+  background-color: #222;
+  color: #999;
+  padding: 10px;
+  font-size: 12px;
+}
+
+/* CSS3 Animations
+---------------------------------------- */ 
+
+//timeline aniamtion
+@-webkit-keyframes timeline{
+  0%{
+    -webkit-transform:translateX(0px);
+  }
+  100%{
+    -webkit-transform:translateX(20px);
+  }
+}
+@-moz-keyframes timeline{
+  0%{
+    -moz-transform:translateX(0px);
+  }
+  100%{
+    -moz-transform:translateX(20px);
+  }
+}
+@-o-keyframes timeline{
+  0%{
+    -o-transform:translateX(0px);
+  }
+  100%{
+    -o-transform:translateX(20px);
+  }
+}
+@keyframes timeline{
+  0%{
+    transform:translateX(0px);
+  }
+  100%{
+    transform:translateX(20px);
+  }
+}
